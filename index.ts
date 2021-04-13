@@ -13,7 +13,7 @@ const colors : Array<string> = [
     "#e74c3c",
     "#27ae60"
 ]
-const rFactor : number = 11.2 
+const rFactor : number = 15.2 
 
 class ScaleUtil {
 
@@ -58,7 +58,7 @@ class DrawingUtil {
         DrawingUtil.drawCircle(context, -size, -size * sf3, r * sf2)
         DrawingUtil.drawLine(context, -size, 0, -size, -size * sf3)
         DrawingUtil.drawCircle(context, 0, size * sf3, r * sf2)
-        DrawingUtil.drawLine(context, 0, 0, size * sf3, 0)
+        DrawingUtil.drawLine(context, 0, 0, 0, size * sf3)
         DrawingUtil.drawCircle(context, 0, -size * 0.5 * sf3, r * sf2)
         DrawingUtil.drawLine(context, 0, 0, 0, -size * 0.5 * sf3)
         context.restore()
