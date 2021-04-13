@@ -212,3 +212,25 @@ class FourBall {
         this.curr.startUpdating(cb)
     }
 }
+
+class Renderer {
+
+    fb : FourBall = new FourBall()
+    animator : Animator = new Animator()
+
+    render(context : CanvasRenderingContext2D) {
+        this.fb.draw(context)
+    }
+
+    handleTap(cb : Function) {
+        this.fb.startUpdating(() => {
+            this.animator.start(() => {
+                cb()
+                this.fb.update(() => {
+                    this.animator.stop()
+                    cb()
+                })
+            })
+        })
+    }
+}
